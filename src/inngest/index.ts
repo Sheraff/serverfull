@@ -1,4 +1,4 @@
-import { EventSchemas, Inngest, type LiteralZodEventSchema } from "inngest"
+import { EventSchemas, Inngest } from "inngest"
 import { object, string } from "zod"
 
 const eventsMap = {

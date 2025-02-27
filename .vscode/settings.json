@@ -1,0 +1,8 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.oxc": "explicit"
+	},
+	"explorer.fileNesting.patterns": {
+		"package.json": ".oxlintrc.json, pnpm-lock.yaml, tsconfig.json",
+	},
+}

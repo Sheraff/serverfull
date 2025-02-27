@@ -1,6 +1,6 @@
 import Fastify from "fastify"
 import { serve } from "inngest/fastify"
-import { inngest, functions } from "#inngest"
+import { functions, inngest } from "#inngest"
 
 const fastify = Fastify({
 	logger: true,
@@ -12,7 +12,7 @@ fastify.route({
 	url: "/api/inngest",
 })
 
-fastify.get("/api/hello", async function (request, reply) {
+fastify.get("/api/hello", async function () {
 	await inngest.send({
 		name: "test/hello.world",
 		data: {
@@ -23,7 +23,7 @@ fastify.get("/api/hello", async function (request, reply) {
 })
 
 // Start up the fastify server
-fastify.listen({ port: 3000 }, function (err, address) {
+fastify.listen({ port: 3000 }, function (err) {
 	if (err) {
 		fastify.log.error(err)
 		process.exit(1)

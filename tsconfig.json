@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		/* Base Options: */
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"target": "es2022",
@@ -9,21 +8,17 @@
 		"moduleDetection": "force",
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
-		/* Strictness */
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
 		"noImplicitOverride": true,
-		/* If transpiling with TypeScript: */
 		"module": "NodeNext",
-		//   "module": "preserve",
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
-		/* If your code doesn't run in the DOM: */
 		"lib": [
 			"ES2024"
 		],
 		"types": [
 			"node"
-		]
+		],
 	}
 }
