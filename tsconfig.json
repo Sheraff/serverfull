@@ -21,6 +21,9 @@
 		/* If your code doesn't run in the DOM: */
 		"lib": [
 			"ES2024"
+		],
+		"types": [
+			"node"
 		]
 	}
 }

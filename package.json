@@ -1,5 +1,11 @@
 {
 	"type": "module",
+	"imports": {
+		"#*": [
+			"./src/*/index.ts",
+			"./src/*.ts"
+		]
+	},
 	"scripts": {
 		"start:inngest": "pnpm dlx inngest-cli@latest dev -u http://localhost:3000/api/inngest",
 		"start:server": "node --experimental-strip-types --watch --watch-preserve-output ./src/index.ts",

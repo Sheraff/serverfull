@@ -1,6 +1,6 @@
 import Fastify from "fastify"
 import { serve } from "inngest/fastify"
-import { inngest, functions } from "./inngest/index.ts"
+import { inngest, functions } from "#inngest"
 
 const fastify = Fastify({
 	logger: true,
