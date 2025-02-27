@@ -1,0 +1,17 @@
+{
+	"type": "module",
+	"scripts": {
+		"start:inngest": "pnpm dlx inngest-cli@latest dev -u http://localhost:3000/api/inngest",
+		"start:server": "node --experimental-strip-types --watch --watch-preserve-output ./src/index.ts",
+		"start": "pnpm run start:inngest & pnpm run start:server"
+	},
+	"dependencies": {
+		"fastify": "^5.2.1",
+		"inngest": "^3.31.12",
+		"zod": "^3.24.2"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.5",
+		"typescript": "^5.7.3"
+	}
+}
