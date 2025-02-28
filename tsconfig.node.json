@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"composite": true,
+		"module": "NodeNext",
+		"lib": [
+			"ES2024"
+		],
+		"types": [
+			"node"
+		],
+	},
+	"include": [
+		"./api",
+		"vite.config.ts",
+	]
+}

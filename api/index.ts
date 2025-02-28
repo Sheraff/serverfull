@@ -1,14 +1,7 @@
 import Fastify from "fastify"
 import { serve } from "inngest/fastify"
-import { functions, inngest } from "#inngest/inngest"
+import { functions, inngest } from "#api/inngest/inngest"
 import { parseArgs, styleText } from 'node:util'
-
-const { values: args } = parseArgs({
-	options: {
-		host: { type: 'string', default: 'localhost', short: 'h' },
-		port: { type: 'string', default: '3000', short: 'p' },
-	}
-})
 
 const fastify = Fastify({
 	logger: {
@@ -57,7 +50,17 @@ fastify.get("/api/hellos", async () => {
 	return { message: "Events sent!" }
 })
 
+fastify.get('/api/michel', async () => {
+	return { message: 'Hello Michel!' }
+})
+
 // Start up the fastify server
+const { values: args } = parseArgs({
+	options: {
+		host: { type: 'string', default: 'localhost', short: 'h' },
+		port: { type: 'string', default: '3001', short: 'p' },
+	}
+})
 fastify.listen({
 	port: Number(args.port),
 	host: args.host
