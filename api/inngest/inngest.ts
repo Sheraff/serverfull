@@ -33,6 +33,18 @@ const helloWorld = inngest.createFunction(
 	},
 )
 
+const recurringFoo = inngest.createFunction(
+	{ id: "recurring-foo" },
+	{ cron: "TZ=Europe/Paris * * * * *" },
+	async ({ step }) => {
+		await step.sendEvent('test/recurring-foo/dispatch', {
+			name: 'test/hello.world',
+			data: { email: 'foo@bar.com' }
+		})
+	},
+)
+
 export const functions = [
 	helloWorld,
+	recurringFoo,
 ]
