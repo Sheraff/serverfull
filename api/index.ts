@@ -4,6 +4,7 @@ import { functions, inngest } from "#api/inngest/inngest"
 import { parseArgs, styleText } from 'node:util'
 import { logger } from "#api/logger"
 
+process.title = "fastify"
 
 const fastify = Fastify({
 	loggerInstance: logger.child({ module: "fastify" }),

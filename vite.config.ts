@@ -1,6 +1,8 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
+process.title = 'vite'
+
 export default defineConfig({
 	plugins: [
 		react(),
