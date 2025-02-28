@@ -5,4 +5,5 @@
 	"explorer.fileNesting.patterns": {
 		"package.json": ".oxlintrc.json, pnpm-lock.yaml, tsconfig.json",
 	},
+	"typescript.tsdk": "node_modules/typescript/lib",
 }
