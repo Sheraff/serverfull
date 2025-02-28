@@ -1,3 +1,4 @@
+import { logger } from "#api/logger"
 import { EventSchemas, Inngest, NonRetriableError } from "inngest"
 import { object, string } from "zod"
 
@@ -12,6 +13,7 @@ const eventsMap = {
 export const inngest = new Inngest({
 	id: "my-app",
 	schemas: new EventSchemas().fromZod(eventsMap),
+	logger: logger.child({ module: "inngest" }),
 })
 
 function parse<T>(key: keyof typeof eventsMap, event: { data: T }): T {

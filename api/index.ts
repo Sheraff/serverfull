@@ -2,14 +2,11 @@ import Fastify from "fastify"
 import { serve } from "inngest/fastify"
 import { functions, inngest } from "#api/inngest/inngest"
 import { parseArgs, styleText } from 'node:util'
+import { logger } from "#api/logger"
+
 
 const fastify = Fastify({
-	logger: {
-		stream: process.env.NODE_ENV !== 'production'
-			? await import('pino-pretty')
-				.then(m => m.default({ colorize: true }))
-			: undefined,
-	},
+	loggerInstance: logger.child({ module: "fastify" }),
 })
 
 fastify.route({
