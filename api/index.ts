@@ -17,7 +17,7 @@ fastify.route({
 	handler: serve({
 		client: inngest,
 		functions,
-		streaming: "force"
+		streaming: "force",
 	}),
 	url: "/api/inngest",
 })
