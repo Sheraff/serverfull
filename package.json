@@ -1,14 +1,11 @@
 {
 	"type": "module",
 	"imports": {
-		"#*": [
-			"./src/*/index.ts",
-			"./src/*.ts"
-		]
+		"#*": "./src/*.ts"
 	},
 	"scripts": {
 		"start:inngest": "pnpm dlx inngest-cli@latest dev -u http://localhost:3000/api/inngest",
-		"start:server": "node --experimental-strip-types --watch --watch-preserve-output ./src/index.ts",
+		"start:server": "node --experimental-strip-types --watch --watch-preserve-output ./src/index.ts --port 3000 --host localhost",
 		"start": "pnpm run start:inngest & pnpm run start:server",
 		"lint": "pnpm dlx oxlint@latest --fix --fix-suggestions"
 	},
