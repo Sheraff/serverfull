@@ -52,7 +52,6 @@ fastify.get('/api/michel', async () => {
 	return { message: 'Hello Michel!' }
 })
 
-// Start up the fastify server
 const { values: args } = parseArgs({
 	options: {
 		host: { type: 'string', default: 'localhost', short: 'h' },
@@ -68,4 +67,10 @@ fastify.listen({
 		process.exit(1)
 	}
 	fastify.log.info(`Server listening at ${styleText('green', `http://${args.host}:${args.port}`)}`)
+	if (process.env.NODE_ENV !== 'production') {
+		fastify.log.info(`Pushing updates to inngest functions...`)
+		fetch(`http://${args.host}:${args.port}/api/inngest`, { method: "PUT" })
+	}
 })
+
+fastify.log.info('Server started')
